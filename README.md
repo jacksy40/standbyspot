@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.org/jacksy40/standbyspot.svg?branch=master)](https://travis-ci.org/jacksy40/standbyspot) [![Code Climate](https://codeclimate.com/github/jacksy40/standbyspot.png)](https://codeclimate.com/github/jacksy40/standbyspot) [![Coverage Status](https://coveralls.io/repos/jacksy40/standbyspot/badge.png)](https://coveralls.io/r/jacksy40/standbyspot)
