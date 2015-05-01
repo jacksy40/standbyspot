@@ -1,0 +1,21 @@
+<h1> add and new company and set admin rights</h1>
+
+  <% if current_user.master? %>
+
+    <%= form_for @company, url:companies_path, method: :post do |f| %>
+      <%= f.text_field :company, placeholder: "company" %>
+      <%= f.submit "add company" %>
+    <% end %>
+    <%= form_tag do %>
+      <%= text_field_tag "", :email, placeholder: "email" %>
+      <%= submit_tag "create administrator" %>
+    <% end %>
+
+    <%= link_to "all companies", companies_path %>
+
+  <% else %>
+
+    <h3> You are not authorized to see this page. </h3>
+
+  <% end %>
+
