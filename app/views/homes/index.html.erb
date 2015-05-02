@@ -1,6 +1,6 @@
 <H1> Welcome </H1>
 
-<% if current_user.master? %>
+<% if current_user && master? %>
 <%= link_to "Master Setup", new_company_path %>
 <% else %>
 <% end %>

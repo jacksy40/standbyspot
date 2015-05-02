@@ -1,6 +1,6 @@
 <h2> List of companies</h2>
 
-<% if current_user.master? %>
+<% if current_user && master? %>
   <% if @companies.any? %>
     <% @companies.each do |company| %>
       <%= company.company %>
