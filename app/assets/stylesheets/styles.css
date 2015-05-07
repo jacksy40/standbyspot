@@ -1,0 +1,17 @@
+.link-box li {
+  list-style: none;
+  display: inline-block;
+  margin: 1em;
+  padding: 1em;
+  border-style: dotted;
+  border-color: #efe434;
+  font-size: 22px;
+}
+
+.link-box > li:hover {
+  background-color: #fef234;
+}
+
+.link-box > li > a:hover {
+  color: #fff;
+}

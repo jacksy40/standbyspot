@@ -1,6 +1,6 @@
 <h1> add and new company and set admin rights</h1>
 
-  <% if current_user || master? %>
+  <% if current_user && master? %>
 
     <%= form_for @company, url:companies_path, method: :post do |f| %>
       <%= f.text_field :company, placeholder: "company" %>

@@ -3,11 +3,11 @@
 <% if current_user && master? %>
   <% if @companies.any? %>
     <% @companies.each do |company| %>
-      <%= company.company %>
+      <li><%= company.company %></li>
     <% end %>
   <% end %>
   <br>
   <%= link_to "Master Setup", new_company_path %>
-  <% else %>
-    <h3>you are not authorized to see this page</h3>
-  <% end %>
+<% else %>
+  <h3>you are not authorized to see this page</h3>
+<% end %>

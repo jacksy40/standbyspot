@@ -1,6 +1,15 @@
 <H1> Welcome </H1>
 
-<% if current_user && master? %>
-<%= link_to "Master Setup", new_company_path %>
-<% else %>
-<% end %>
+
+<div class="link-box">
+  <% if current_user && master? %>
+    <li><%= link_to "Master Setup", new_company_path %></li>
+  <% end %>
+   <li><%= link_to "Search listings", listings_path %></li>
+   <li><%= link_to "Create listing", new_listing_path %></li>
+   <li><%= link_to "My dash board", users_path %></li>
+</div>
+
+
+
+

@@ -1,0 +1,14 @@
+
+<h1>Listing Detail page phone number and email will be listed for premium users only</h1>
+<h2> will have pictures</h2>
+<% if @listing %>
+  <div class="panel listing">
+    <li><%= @listing.user.username == nil ? "John Doe" : @listing.user.username %></li>
+    <li><%= @listing.user.email %></li>
+    <li><%= @listing.address %></li>
+    <li><%= @listing.room_type %></li>
+    <li><%= @listing.bathroom %></li>
+    <li><%= @listing.price %></li>
+    <li><%= @listing.notes %></li>
+  </div>
+<% end %>

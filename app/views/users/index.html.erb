@@ -1,0 +1,12 @@
+<h1>User dash board</h1>
+<h2>Listings</h2>
+<% if @listing %>
+  <% @listing.each do |l| %>
+    <%= l.user.email %>
+    <%= l.address %>
+    <%= l.price %>
+  <% end %>
+<% end %>
+<h2>Message board</h2>
+
+

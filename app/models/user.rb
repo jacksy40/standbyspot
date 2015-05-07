@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
   belongs_to :company
+  has_many :listings
+  has_many :messages, through: :listings
 
   validates :authorized_company, presence: true
 
@@ -13,7 +15,7 @@ class User < ActiveRecord::Base
   @companies = Company.all
   array = email.split('@')
   array = array.pop
-  company = array.gsub '.com', ''
+  company = array.gsub('.com', '')
     @companies.each do |c|
       if c.company.downcase == company.downcase
         return true

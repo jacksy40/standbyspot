@@ -1,0 +1,35 @@
+require 'rails_helper'
+
+feature 'user adds a listing', %Q{
+  As an authenticated user
+  I want to add an accomodation
+  So that other users can see what I have for rent
+} do
+
+  scenario 'user adds a new listing' do
+
+    visit new_accomodations_path
+
+    fill_in 'address', with: "address"
+    fill_in 'type', with: user.email
+    fill_in 'cost', with: user.email
+    fill_in 'bed_type', with: user.email
+    fill_in 'bathroom', with: user.email
+    fill_in 'bed_type', with: user.email
+    fill_in 'bed_type', with: user.email
+    fill_in 'bed_type', with: user.email
+    fill_in 'info', with: user.password
+
+    click_button 'Log in'
+
+    expect(page).to have_content('Signed in successfully')
+
+    click_link 'Sign Out'
+    expect(page).to have_content('Signed out successfully')
+  end
+
+  scenario 'unauthenticated user attempts to sign out' do
+    visit '/'
+    expect(page).to_not have_content('Sign Out')
+  end
+end

@@ -1,0 +1,13 @@
+<h1> Create Listing</h1>
+<h3>Will add feature to upload pictures</h3>
+<div>
+  <%= form_for @listing, url:listings_path, method: :post do |f| %>
+    <%= f.text_field :address, placeholder: "address" %>
+      <%= f.text_field :room_type, placeholder: "room type" %>
+       <%= f.text_field :bathroom, placeholder: "bathroom" %>
+       <%= f.text_field :price, placeholder: "price" %>
+      <%= f.text_field :notes, placeholder: "notes" %>
+    <%= f.submit "create listings" %>
+  <% end %>
+
+</div>

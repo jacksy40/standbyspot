@@ -5,7 +5,21 @@ feature 'user signs in', %Q{
   I want to sign in
   So that I can regain access to my account
 } do
-  scenario 'specify valid credentials' do
+  scenario 'specify valid subscription' do
+    user = FactoryGirl.create(:user)
+    company = FactoryGirl.create(:company)
+
+    visit new_user_session_path
+
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
+
+    expect(page).to have_content('Signed in successfully')
+    expect(page).to have_content('Sign Out')
+  end
+
+  scenario 'specify invalid subscription' do
     user = FactoryGirl.create(:user)
 
     visit new_user_session_path
@@ -15,7 +29,7 @@ feature 'user signs in', %Q{
 
     click_button 'Log in'
 
-    expect(page).to have_content('Signed in successfully')
+    expect(page).to have_content('Email - please ask your company to subscribe')
     expect(page).to have_content('Sign Out')
   end
 

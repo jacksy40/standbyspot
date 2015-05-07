@@ -1,0 +1,17 @@
+<h1>Search for listings here</h1>
+
+<h2>non-affiliate-users can send message from this page to contact listing</h2>
+<h2>Premium users will have email phone number and message to contact listing</h2>
+<h2>Premium user's messages will be ordered first for the lister to read.</h2>
+
+<h3>List of crash pads</h3>
+<% if @listing %>
+  <% @listing.each do |l| %>
+  <div class="panel listing">
+    <li><%= l.address %></li>
+    <li><%= l.room_type %></li>
+    <li><%= l.price %></li>
+    <%= link_to "express interest", listing_path(l.id) %>
+  </div>
+  <% end %>
+<% end %>
