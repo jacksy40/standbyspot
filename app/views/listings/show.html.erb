@@ -12,3 +12,9 @@
     <li><%= @listing.notes %></li>
   </div>
 <% end %>
+
+<%= form_for [@listing, @inquiry], remote: true do |m| %>
+ <%= m.text_field :message, placeholder: "message" %>
+ <%= m.submit "send message" %>
+<% end %>
+

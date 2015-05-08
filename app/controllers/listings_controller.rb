@@ -10,6 +10,7 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    @inquiry = Inquiry.new
   end
 
   def create
