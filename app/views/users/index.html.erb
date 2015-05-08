@@ -8,5 +8,42 @@
   <% end %>
 <% end %>
 <h2>Message board</h2>
+  <% if @listing %>
+    <% @listing.each do |l| %>
+      <h4> Inquiry for listing <%= l.address %></h4>
+      <% l.inquiries.each do |i| %>
+      <h4> inquires</h4>
+        <li><%= i.message %></li>
+        <li><%= i.user.email %></li>
+          <%= form_for [i, @conversation], remote: true do |m| %>
+              <%= m.text_field :message, placeholder: "respond" %>
+            <%= m.submit "send message" %>
+          <% end %>
+        <%i.conversations.each do |c| %>
+          <h4> Conversation</h4>
+          <li><%= c.message %></li>
+        <% end %>
 
+    <% end %>
+
+  <% end %>
+<% end %>
+
+<h2>Sent Inquiries</h2>
+<% if @inquiries %>
+    <% @inquiries.each do |i| %>
+    <h4><%= i.listing.address %></h4>
+      <li><%= i.message %></li>
+      <li><%= i.user.email %></li>
+      <%= form_for [i, @conversation], remote: true do |m| %>
+              <%= m.text_field :message, placeholder: "respond" %>
+            <%= m.submit "send message" %>
+          <% end %>
+      <h4>Response</h4>
+      <% i.conversations.each do |c| %>
+        <li><%= c.user.email %></li>
+        <li><%= c.message %></li>
+      <% end %>
+    <% end %>
+<% end %>
 

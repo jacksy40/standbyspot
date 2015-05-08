@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
 
   belongs_to :company
   has_many :listings
-  has_many :messages, through: :listings
+  has_many :inquiries
+  has_many :conversations
 
   validates :authorized_company, presence: true
 

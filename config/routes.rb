@@ -4,8 +4,18 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :homes
-  resources :users
   resources :companies
-  resources :listings
+
+  resources :users do
+    resources :listings
+  end
+
+  resources :listings do
+    resources :inquiries
+  end
+
+  resources :inquiries do
+    resources :conversations
+  end
 
 end
