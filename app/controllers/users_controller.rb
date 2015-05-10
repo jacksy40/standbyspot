@@ -6,5 +6,11 @@ class UsersController < ApplicationController
     @conversation = Conversation.new
   end
 
+  def update
+    @profile_photo = current_user.update_attributes(profile_photo: params[:profile_photo])
+    flash[:notice] = "Avatar updated"
+    redirect_to users_path
+  end
+
 end
 

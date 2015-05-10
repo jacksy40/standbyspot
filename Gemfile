@@ -15,6 +15,7 @@ gem 'puma'
 gem 'rails_stdout_logging'
 gem 'foundation-rails', github: "zurb/foundation-rails"
 gem 'rails_serve_static_assets'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'pry-rails'
